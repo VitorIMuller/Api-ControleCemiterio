@@ -9,6 +9,7 @@ const errorTable = {
 }
 
 export default function errorHandleMiddleware(err, req: Request, res: Response, next: NextFunction) {
+
     if (!err.message) {
         err.message === "An error as occured"
     }
