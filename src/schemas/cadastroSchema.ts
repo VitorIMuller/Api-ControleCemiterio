@@ -7,8 +7,8 @@ export const cadastroSchema = joi.object({
     numero: joi.string().allow(''),
     bairro: joi.string().required(),
     cidade: joi.string().required(),
-    telefone: joi.string().allow(''),
-    celular: joi.string().allow(''),
+    telefone: joi.string().required(),
+    celular: joi.string().required(),
     email: joi.string().allow(''),
     cpf: joi.string().allow('')
 })
