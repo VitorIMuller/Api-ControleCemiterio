@@ -22,3 +22,14 @@ export async function getTumulo(formData) {
 
     return tumulo
 }
+
+export async function atualizaTumulo(formData) {
+
+    const { idSepultura } = formData
+
+    const findTumulo = await respositorie.findByTumuloNameFormData(idSepultura);
+    const { id } = findTumulo
+    console.log(findTumulo)
+
+    await respositorie.atualiza(id, formData)
+}

@@ -17,3 +17,10 @@ export async function consultaCadastro(req: Request, res: Response) {
 
     res.send(tumulo).status(200)
 }
+
+export async function atualizaCadastro(req: Request, res: Response) {
+
+    await services.atualizaTumulo(req.body)
+
+    res.sendStatus(204)
+}

@@ -16,3 +16,11 @@ export async function findByTumuloName(idSepultura: string) {
         }
     })
 }
+
+export async function deleteSepultado(id) {
+    await prisma.sepultado.delete({
+        where: {
+            id: id
+        }
+    })
+}

@@ -22,3 +22,24 @@ export async function findByTumuloName(nomeResponsavel: string) {
 
     return data
 }
+
+export async function findByTumuloNameFormData(id) {
+    const data = await prisma.tumulos.findFirst({
+        where: {
+            idSepultura: id
+        }
+    })
+
+    return data
+}
+
+export async function atualiza(id, formData) {
+
+    await prisma.tumulos.update({
+        where: {
+            id: id
+        },
+
+        data: formData
+    })
+}

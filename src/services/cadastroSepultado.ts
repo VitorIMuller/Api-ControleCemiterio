@@ -14,3 +14,13 @@ export async function registerSepultado(formData) {
     const data = { idTumulo, dataFalescimento, dataNascimento, nomeSepultado }
     await respositorie.add(data)
 }
+
+export async function deletarSepultado(params) {
+
+
+    const { id } = params
+
+
+
+    await respositorie.deleteSepultado(parseInt(id))
+}
