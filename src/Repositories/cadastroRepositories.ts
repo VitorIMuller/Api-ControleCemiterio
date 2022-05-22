@@ -8,10 +8,17 @@ export async function create(formData) {
     })
 }
 
-export async function findByTumuloName(idSepultura: string) {
-    return await prisma.tumulos.findFirst({
+export async function findByTumuloName(nomeResponsavel: string) {
+    const data = await prisma.tumulos.findMany({
         where: {
-            idSepultura
+            nomeResponsavel: {
+                contains: nomeResponsavel
+            }
+        },
+        include: {
+            sepultado: true
         }
     })
+
+    return data
 }

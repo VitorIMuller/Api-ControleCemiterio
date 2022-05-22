@@ -14,3 +14,11 @@ export async function createTumulo(formData) {
 
     await respositorie.create(formData)
 }
+
+export async function getTumulo(formData) {
+    const { nomeResponsavel } = formData
+
+    const tumulo = await respositorie.findByTumuloName(nomeResponsavel)
+
+    return tumulo
+}

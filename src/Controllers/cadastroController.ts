@@ -10,3 +10,10 @@ export async function novoCadastro(req: Request, res: Response) {
 
     res.sendStatus(201)
 }
+
+export async function consultaCadastro(req: Request, res: Response) {
+
+    const tumulo = await services.getTumulo(req.body)
+
+    res.send(tumulo).status(200)
+}
