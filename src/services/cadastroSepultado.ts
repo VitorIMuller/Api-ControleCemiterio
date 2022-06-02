@@ -9,8 +9,12 @@ export async function registerSepultado(formData) {
         type: 'Unauthorized',
         message: 'Tumulo não cadastrado'
     };
+    const findSepultado = await respositorie.findSepultado(nomeSepultado)
+    if (findSepultado) throw {
+        type: 'Conflict',
+        message: 'Sepultado Já Cadastrado'
+    };
     const idTumulo = findTumulo.id
-
     const data = { idTumulo, dataFalescimento, dataNascimento, nomeSepultado }
     await respositorie.add(data)
 }

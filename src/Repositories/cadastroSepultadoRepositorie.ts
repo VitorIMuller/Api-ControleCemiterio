@@ -12,7 +12,15 @@ export async function add(data) {
 export async function findByTumuloName(idSepultura: string) {
     return await prisma.tumulos.findFirst({
         where: {
-            idSepultura
+            idSepultura: idSepultura
+        }
+    })
+}
+
+export async function findSepultado(name: string) {
+    return await prisma.sepultado.findFirst({
+        where: {
+            nomeSepultado: name
         }
     })
 }
